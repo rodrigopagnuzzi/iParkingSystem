@@ -4,29 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {LoginComponent} from './login/login.component';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import {routes} from './app.routes';
 import { RouterModule }   from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      { path: 'login/', component: LoginComponent },
-      {
-        path: 'login',
-        component: LoginComponent,
-        data: {
-          title: 'Login'
-        }
-      },
-      { path: '', component: LoginComponent },
-      { path: '**', component: LoginComponent }
-    ])
+    RouterModule.forRoot(routes)
   
   ],
   providers: [],
